@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GGE Eletronicnet — Electronics</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-top">
+    <a href="index.html" class="logo"><img src="images/logo-header.png" alt="GGE Eletronicnet"></a>
+    <div class="search-wrap">
+      <form class="search-bar" action="#" onsubmit="return false;">
+        <input type="text" placeholder="Search products" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+      <div class="search-results" hidden></div>
+    </div>
+    <div class="header-icons">
+      <a href="#">Account</a>
+      <a href="cart.html">Cart (0)</a>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html">Accessories</a></li>
+      <li><a href="automotive.html">Automotive</a></li>
+      <li><a href="electronics.html">Electronics</a></li>
+      <li><a href="#">Computing</a></li>
+      <li><a href="category.html">Security</a></li>
+      <li><a href="#">Clippers</a></li>
+      <li><a href="#">Promotions</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="breadcrumb">
+  <a href="index.html">Home</a> / Electronics
+</div>
+
+<div class="category-layout">
+  <aside class="filters">
+    <h3>Filters</h3>
+    <div class="filter-group">
+      <h4>Price range</h4>
+      <label><input type="checkbox"> Under $50</label>
+      <label><input type="checkbox"> $50 – $150</label>
+      <label><input type="checkbox"> Over $150</label>
+    </div>
+    <div class="filter-group">
+      <h4>Type</h4>
+      <label><input type="checkbox"> Smartphones</label>
+      <label><input type="checkbox"> Chargers</label>
+    </div>
+  </aside>
+
+  <main>
+    <div class="category-header">
+      <h1>Electronics</h1>
+      <span>3 products</span>
+    </div>
+
+    <div class="category-grid">
+
+      <div class="product-card">
+        <div class="product-thumb"><img src="images/Iphone-18-Pro-Max.jpg.jpg" alt="Iphone 18 Pro Max" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
+        <div class="product-name">Iphone 18 Pro Max</div>
+        <div><span class="price-new">$1,299.99</span></div>
+        <button class="add-btn">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb"><img src="images/Iphone-Duo.jpg.jpg" alt="Iphone Duo" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
+        <div class="product-name">Iphone Duo</div>
+        <div><span class="price-old">$999.99</span><span class="price-new">$899.99</span></div>
+        <button class="add-btn">Add to cart</button>
+      </div>
+
+      <div class="product-card">
+        <div class="product-thumb"><img src="images/Iphone-Universal-Charger.jpg" alt="Iphone Universal Charger" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
+        <div class="product-name">Iphone Universal Charger</div>
+        <div><span class="price-new">$39.99</span></div>
+        <button class="add-btn">Add to cart</button>
+      </div>
+
+    </div>
+
+    <div class="pagination">
+      <a href="#" class="active">1</a>
+    </div>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="index.html">Accessories</a></li>
+        <li><a href="automotive.html">Automotive</a></li>
+        <li><a href="electronics.html">Electronics</a></li>
+        <li><a href="category.html">Security</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Returns &amp; exchanges</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <ul>
+        <li>Phone: 0405671758</li>
+        <li>Email: gabfamoreira@gmail.com</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Follow us</h3>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">GGE Eletronicnet — over 20 years serving customers online.</div>
+</footer>
+
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="search.js"></script>
+</body>
+</html>
