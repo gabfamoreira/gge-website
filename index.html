@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GGE Eletronicnet — Home</title>
+<title>GGE ELETRONICS — Home</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="header-top">
-    <a href="index.html" class="logo"><img src="images/logo-header.png" alt="GGE Eletronicnet"></a>
+    <a href="index.html" class="logo"><img src="images/logo-header.png" alt="GGE ELETRONICS"></a>
     <div class="search-wrap">
       <form class="search-bar" action="#" onsubmit="return false;">
         <input type="text" placeholder="Search products" autocomplete="off">
@@ -19,28 +19,111 @@
       <div class="search-results" hidden></div>
     </div>
     <div class="header-icons">
-      <a href="#">Account</a>
-      <a href="cart.html">Cart (0)</a>
+      <a href="account.html">Account</a>
+      <a href="cart.html">Basket (0)</a>
     </div>
   </div>
   <nav class="main-nav">
     <ul>
-      <li><a href="#">Accessories</a></li>
+      <li><a href="accessories.html">Accessories</a></li>
       <li><a href="automotive.html">Automotive</a></li>
       <li><a href="electronics.html">Electronics</a></li>
-      <li><a href="#">Computing</a></li>
+      <li><a href="computing.html">Computing</a></li>
       <li><a href="category.html">Security</a></li>
-      <li><a href="#">Clippers</a></li>
-      <li><a href="#">Promotions</a></li>
+      <li><a href="promotions.html">Promotions</a></li>
     </ul>
   </nav>
 </header>
 
 <section class="hero">
   <div class="wrap">
-    <h1>Tech accessories for everyday life</h1>
-    <p>Speakers, cameras, computer accessories and more — trusted service for over 20 years.</p>
-    <a href="#new-arrivals" class="cta">Shop new arrivals</a>
+    <div class="hero-text">
+      <h1>Two decades of keeping you connected.</h1>
+      <p>Tech made simple</p>
+      <a href="#new-arrivals" class="cta">Shop new arrivals</a>
+    </div>
+
+    <svg class="hero-art" viewBox="0 0 400 400" role="img" aria-label="An open GGE ELETRONICS box glowing on a stand">
+      <defs>
+        <linearGradient id="ray" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#fff" stop-opacity="0.9"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="stand" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#324758"/>
+          <stop offset="0.5" stop-color="#5a86ab"/>
+          <stop offset="1" stop-color="#324758"/>
+        </linearGradient>
+        <linearGradient id="standTop" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#8fb8dc"/>
+          <stop offset="1" stop-color="#709ec4"/>
+        </linearGradient>
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6"/>
+        </filter>
+      </defs>
+
+      <!-- Light rays -->
+      <g class="hero-rays" filter="url(#blur)">
+        <polygon points="185,200 215,200 250,20 150,20" fill="url(#ray)"/>
+        <polygon points="175,200 195,200 110,40 70,60" fill="url(#ray)" opacity="0.7"/>
+        <polygon points="205,200 225,200 330,60 290,40" fill="url(#ray)" opacity="0.7"/>
+        <polygon points="168,205 180,200 40,120 30,145" fill="url(#ray)" opacity="0.45"/>
+        <polygon points="220,200 232,205 370,145 360,120" fill="url(#ray)" opacity="0.45"/>
+      </g>
+
+      <!-- Sparkles -->
+      <g class="hero-sparkles" fill="#fff">
+        <circle cx="120" cy="90" r="2.5"/>
+        <circle cx="265" cy="70" r="2"/>
+        <circle cx="300" cy="130" r="3"/>
+        <circle cx="90" cy="150" r="2"/>
+        <circle cx="215" cy="45" r="1.8"/>
+        <circle cx="160" cy="120" r="1.5"/>
+        <circle cx="240" cy="150" r="1.6"/>
+      </g>
+
+      <!-- Stand -->
+      <rect x="60" y="320" width="280" height="80" fill="url(#stand)"/>
+      <ellipse cx="200" cy="320" rx="140" ry="22" fill="url(#standTop)"/>
+      <ellipse class="hero-ring" cx="200" cy="336" rx="136" ry="20" fill="none" stroke="#fff" stroke-width="5" filter="url(#blur)"/>
+      <ellipse cx="200" cy="336" rx="136" ry="20" fill="none" stroke="#fff" stroke-width="2"/>
+
+      <!-- Box -->
+      <g class="hero-box">
+        <polygon points="130,205 270,205 262,196 138,196" fill="#9c7040"/>
+        <polygon points="130,205 88,160 112,150 142,196" fill="#d9ab74"/>
+        <polygon points="270,205 312,160 288,150 258,196" fill="#d9ab74"/>
+        <rect x="130" y="205" width="140" height="120" rx="3" fill="#c8955c"/>
+        <rect x="180" y="205" width="40" height="34" fill="#709ec4"/>
+        <text x="200" y="228" text-anchor="middle" font-family="Segoe UI, sans-serif" font-size="13" font-weight="700" fill="#fff">GGE</text>
+        <!-- Store icon from the GGE logo -->
+        <g fill="none" stroke="#324758" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="178" y="250" width="44" height="9" rx="3"/>
+          <path d="M178 259 L171 273 H229 L222 259"/>
+          <path d="M185.3 259 L180.7 273 M192.7 259 L190.3 273 M200 259 V273 M207.3 259 L209.7 273 M214.7 259 L219.3 273"/>
+          <path d="M171 273 a4.83 4.83 0 0 0 9.67 0 a4.83 4.83 0 0 0 9.67 0 a4.83 4.83 0 0 0 9.67 0 a4.83 4.83 0 0 0 9.67 0 a4.83 4.83 0 0 0 9.67 0 a4.83 4.83 0 0 0 9.67 0"/>
+          <path d="M175 278 V316 M225 278 V316 M175 308 H225"/>
+          <rect x="196" y="310" width="8" height="3" rx="1.5"/>
+        </g>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section class="deals" data-deals="main" aria-label="Deals">
+  <div class="wrap deals-wrap">
+    <button type="button" class="deals-arrow deals-prev" aria-label="Previous deals" hidden>&#8249;</button>
+    <div class="deals-track"></div>
+    <button type="button" class="deals-arrow deals-next" aria-label="More deals">&#8250;</button>
+  </div>
+</section>
+
+<section class="deals deals-more" data-deals="more" aria-label="More deals">
+  <div class="wrap deals-wrap">
+    <button type="button" class="deals-arrow deals-prev" aria-label="Previous deals" hidden>&#8249;</button>
+    <div class="deals-track"></div>
+    <button type="button" class="deals-arrow deals-next" aria-label="More deals">&#8250;</button>
   </div>
 </section>
 
@@ -61,12 +144,13 @@
   </div>
 </section>
 
+<a href="#" class="back-to-top">Back to top</a>
 <footer class="site-footer">
   <div class="footer-grid">
     <div>
       <h3>Categories</h3>
       <ul>
-        <li><a href="#">Accessories</a></li>
+        <li><a href="accessories.html">Accessories</a></li>
         <li><a href="automotive.html">Automotive</a></li>
         <li><a href="electronics.html">Electronics</a></li>
         <li><a href="category.html">Security</a></li>
@@ -75,9 +159,9 @@
     <div>
       <h3>Support</h3>
       <ul>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
-        <li><a href="#">Returns &amp; exchanges</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#returns">Returns &amp; exchanges</a></li>
       </ul>
     </div>
     <div>
@@ -90,17 +174,20 @@
     <div>
       <h3>Follow us</h3>
       <ul>
-        <li><a href="#">Instagram</a></li>
+        <li><a href="https://www.instagram.com/gge_eletronicos" target="_blank" rel="noopener">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">GGE Eletronicnet — over 20 years serving customers online.</div>
+  <div class="footer-bottom">GGE ELETRONICS — over 20 years serving customers online.</div>
 </footer>
 
 <script src="products.js"></script>
 <script src="render.js"></script>
+<script src="deals.js"></script>
 <script src="cart.js"></script>
 <script src="search.js"></script>
+<script src="account.js"></script>
+<script src="sidebar.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GGE ELETRONICS — Electronics</title>
+<title>GGE ELETRONICS — Account</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,61 +36,52 @@
 </header>
 
 <div class="breadcrumb">
-  <a href="index.html">Home</a> / Electronics
+  <a href="index.html">Home</a> / Account
 </div>
 
-<div class="category-layout">
-  <aside class="filters">
-    <h3>Filters</h3>
-    <div class="filter-group">
-      <h4>Price range</h4>
-      <label><input type="checkbox"> Under $50</label>
-      <label><input type="checkbox"> $50 – $150</label>
-      <label><input type="checkbox"> Over $150</label>
-    </div>
-    <div class="filter-group">
-      <h4>Type</h4>
-      <label><input type="checkbox"> Smartphones</label>
-      <label><input type="checkbox"> Chargers</label>
-    </div>
-  </aside>
+<main class="account-page">
+  <div class="account-welcome" hidden>
+    <h1>Hello, <span class="account-name"></span>!</h1>
+    <p>You are logged in as <strong class="account-email"></strong>.</p>
+    <button type="button" class="add-btn logout-btn">Log out</button>
+  </div>
 
-  <main>
-    <div class="category-header">
-      <h1>Electronics</h1>
-      <span>3 products</span>
-    </div>
+  <div class="account-forms">
+    <section class="account-card">
+      <h1>Create account</h1>
+      <form id="signup-form" novalidate>
+        <label for="signup-name">Full name</label>
+        <input id="signup-name" name="name" type="text" autocomplete="name" required>
 
-    <div class="category-grid">
+        <label for="signup-email">Email</label>
+        <input id="signup-email" name="email" type="email" autocomplete="email" required>
 
-      <div class="product-card">
-        <div class="product-thumb"><img src="images/Iphone-18-Pro-Max.jpg.jpg" alt="Iphone 18 Pro Max" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
-        <div class="product-name">Iphone 18 Pro Max</div>
-        <div><span class="price-new">$1,299.99</span></div>
-        <button class="add-btn">Add to basket</button>
-      </div>
+        <label for="signup-password">Password</label>
+        <input id="signup-password" name="password" type="password" autocomplete="new-password" minlength="6" required>
 
-      <div class="product-card">
-        <div class="product-thumb"><img src="images/Iphone-Duo.jpg.jpg" alt="Iphone Duo" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
-        <div class="product-name">Iphone Duo</div>
-        <div><span class="price-old">$999.99</span><span class="price-new">$899.99</span></div>
-        <button class="add-btn">Add to basket</button>
-      </div>
+        <label for="signup-confirm">Confirm password</label>
+        <input id="signup-confirm" name="confirm" type="password" autocomplete="new-password" required>
 
-      <div class="product-card">
-        <div class="product-thumb"><img src="images/Iphone-Universal-Charger.jpg" alt="Iphone Universal Charger" onload="this.nextElementSibling.hidden = true" onerror="this.hidden = true"><span>Product image</span></div>
-        <div class="product-name">Iphone Universal Charger</div>
-        <div><span class="price-new">$39.99</span></div>
-        <button class="add-btn">Add to basket</button>
-      </div>
+        <p class="form-message" role="alert"></p>
+        <button type="submit" class="add-btn">Create account</button>
+      </form>
+    </section>
 
-    </div>
+    <section class="account-card">
+      <h1>Log in</h1>
+      <form id="login-form" novalidate>
+        <label for="login-email">Email</label>
+        <input id="login-email" name="email" type="email" autocomplete="email" required>
 
-    <div class="pagination">
-      <a href="#" class="active">1</a>
-    </div>
-  </main>
-</div>
+        <label for="login-password">Password</label>
+        <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+
+        <p class="form-message" role="alert"></p>
+        <button type="submit" class="add-btn">Log in</button>
+      </form>
+    </section>
+  </div>
+</main>
 
 <a href="#" class="back-to-top">Back to top</a>
 <footer class="site-footer">

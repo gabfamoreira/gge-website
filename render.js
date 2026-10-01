@@ -22,7 +22,7 @@ function productCardHTML(product) {
         <div class="product-thumb">${thumbHTML}</div>
         <div class="product-name">${escapeHtml(product.name)}</div>
         <div>${priceHTML}</div>
-        <button class="add-btn">Add to cart</button>
+        <button class="add-btn">Add to basket</button>
       </div>`;
 }
 

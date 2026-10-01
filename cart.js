@@ -20,7 +20,7 @@ function formatPrice(price) {
 function updateCartCount(cart) {
   const itemCount = cart.reduce((total, item) => total + item.quantity, 0);
   document.querySelectorAll('.header-icons a[href="cart.html"]').forEach((cartLink) => {
-    cartLink.textContent = `Cart (${itemCount})`;
+    cartLink.textContent = `Basket (${itemCount})`;
   });
 }
 
@@ -55,14 +55,29 @@ function productFromButton(button) {
   };
 }
 
+function readQuantity(input) {
+  const quantity = Math.floor(Number(input?.value || 1));
+  return Number.isFinite(quantity) && quantity >= 1 ? quantity : 1;
+}
+
+function addCardQuantityInputs() {
+  document.querySelectorAll('.product-card .add-btn').forEach((button) => {
+    const quantityLabel = document.createElement('label');
+    quantityLabel.className = 'card-qty';
+    quantityLabel.innerHTML = 'Qty <input type="number" min="1" value="1">';
+    button.before(quantityLabel);
+  });
+}
+
 function bindAddButtons() {
   document.querySelectorAll('.add-btn').forEach((button) => {
     button.addEventListener('click', () => {
-      const quantityInput = button.closest('.purchase-row')?.querySelector('input[type="number"]');
-      const quantity = Math.max(1, Number(quantityInput?.value || 1));
+      const quantityInput = button.closest('.purchase-row, .product-card')?.querySelector('input[type="number"]');
+      const quantity = readQuantity(quantityInput);
+      if (quantityInput) quantityInput.value = quantity;
       addToCart(productFromButton(button), quantity);
       const originalText = button.textContent;
-      button.textContent = 'Added to cart';
+      button.textContent = 'Added to basket';
       setTimeout(() => { button.textContent = originalText; }, 1200);
     });
   });
@@ -77,7 +92,7 @@ function renderCart() {
 
   if (cart.length === 0) {
     const emptyRow = document.createElement('tr');
-    emptyRow.innerHTML = '<td colspan="4">Your cart is empty.</td>';
+    emptyRow.innerHTML = '<td colspan="4">Your basket is empty.</td>';
     tableBody.appendChild(emptyRow);
   } else {
     cart.forEach((item, index) => {
@@ -85,7 +100,7 @@ function renderCart() {
       row.innerHTML = `
         <td>${item.name}</td>
         <td>${formatPrice(item.price)}</td>
-        <td>${item.quantity}</td>
+        <td><input class="cart-qty" type="number" min="1" value="${item.quantity}" data-cart-index="${index}" aria-label="Quantity for ${item.name}"></td>
         <td><button class="remove-btn" type="button" data-cart-index="${index}">Remove</button></td>
       `;
       tableBody.appendChild(row);
@@ -106,11 +121,21 @@ function renderCart() {
       renderCart();
     });
   });
+
+  tableBody.querySelectorAll('.cart-qty').forEach((input) => {
+    input.addEventListener('change', () => {
+      const updatedCart = readCart();
+      updatedCart[Number(input.dataset.cartIndex)].quantity = readQuantity(input);
+      writeCart(updatedCart);
+      renderCart();
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const cart = readCart();
   updateCartCount(cart);
+  addCardQuantityInputs();
   bindAddButtons();
   renderCart();
 });
